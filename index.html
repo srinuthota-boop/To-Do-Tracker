@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional To-Do Progress Tracker</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="site-header" id="site-header">
+      <div class="header-brand" id="header-brand">
+        <div class="brand-mark" id="brand-mark" aria-hidden="true">✓</div>
+        <div class="brand-copy" id="brand-copy">
+          <p class="eyebrow" id="eyebrow">Productivity dashboard</p>
+          <h1 class="app-title" id="app-title">To-Do Progress Tracker</h1>
+        </div>
+      </div>
+
+      <label class="dark-mode-toggle" id="dark-mode-toggle" for="theme-toggle">
+        <input type="checkbox" id="theme-toggle" name="theme-toggle" />
+        <span class="toggle-label" id="toggle-label">Dark Mode</span>
+      </label>
+    </header>
+
+    <main class="page-main" id="page-main">
+      <section class="task-composer" id="task-composer" aria-labelledby="task-composer-title">
+        <div class="section-heading" id="section-heading-task-composer">
+          <h2 id="task-composer-title">Add New Task</h2>
+        </div>
+
+        <form class="task-form" id="task-form" action="#" method="get">
+          <label class="task-label" for="task-input">Task</label>
+          <input
+            type="text"
+            class="task-input"
+            id="task-input"
+            name="task-input"
+            placeholder="Enter a new task"
+          />
+          <button type="submit" class="add-task-btn" id="add-task-btn">Add Task</button>
+        </form>
+      </section>
+
+      <section class="task-controls" id="task-controls" aria-label="Task controls">
+        <div class="search-wrapper" id="search-wrapper">
+          <label class="search-label" for="search-input">Search</label>
+          <input
+            type="search"
+            class="search-input"
+            id="search-input"
+            name="search-input"
+            placeholder="Search tasks"
+          />
+        </div>
+
+        <div class="filter-wrapper" id="filter-wrapper">
+          <label class="filter-label" for="filter-select">Filter</label>
+          <select class="filter-select" id="filter-select" name="filter-select">
+            <option value="all">All Tasks</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+            <option value="today">Today</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="progress-section" id="progress-section" aria-labelledby="progress-title">
+        <div class="section-heading" id="section-heading-progress">
+          <h2 id="progress-title">Progress Overview</h2>
+        </div>
+
+        <div class="progress-card" id="progress-card">
+          <div class="progress-meta" id="progress-meta">
+            <p class="progress-text" id="progress-text">Overall completion</p>
+            <strong class="progress-percent" id="progress-percent">0%</strong>
+          </div>
+          <progress class="task-progress" id="task-progress" value="0" max="100">0%</progress>
+        </div>
+      </section>
+
+      <section class="task-statistics" id="task-statistics" aria-labelledby="statistics-title">
+        <div class="section-heading" id="section-heading-statistics">
+          <h2 id="statistics-title">Task Statistics</h2>
+        </div>
+
+        <div class="stats-grid" id="stats-grid">
+          <article class="stat-item total-tasks" id="total-tasks">
+            <p class="stat-label" id="total-tasks-label">Total Tasks</p>
+            <strong class="stat-value" id="total-tasks-value">0</strong>
+          </article>
+
+          <article class="stat-item pending-tasks" id="pending-tasks">
+            <p class="stat-label" id="pending-tasks-label">Pending Tasks</p>
+            <strong class="stat-value" id="pending-tasks-value">0</strong>
+          </article>
+
+          <article class="stat-item completed-tasks" id="completed-tasks">
+            <p class="stat-label" id="completed-tasks-label">Completed Tasks</p>
+            <strong class="stat-value" id="completed-tasks-value">0</strong>
+          </article>
+
+          <article class="stat-item completion-rate" id="completion-rate">
+            <p class="stat-label" id="completion-rate-label">Progress Percentage</p>
+            <strong class="stat-value" id="completion-rate-value">0%</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="task-lists" id="task-lists" aria-label="Task lists">
+        <div class="task-column pending-column" id="pending-column">
+          <header class="column-header" id="pending-header">
+            <h2>Pending Tasks</h2>
+            <span class="task-count" id="pending-task-count">0</span>
+          </header>
+
+          <ul class="task-list pending-task-list" id="pending-task-list" aria-label="Pending task list">
+            <li class="task-item pending-item" id="pending-task-item-1">
+              <label class="task-check" for="pending-check-1">
+                <input type="checkbox" id="pending-check-1" name="pending-check-1" />
+                <span>Prepare weekly project brief</span>
+              </label>
+            </li>
+
+            <li class="task-item pending-item" id="pending-task-item-2">
+              <label class="task-check" for="pending-check-2">
+                <input type="checkbox" id="pending-check-2" name="pending-check-2" />
+                <span>Review client feedback</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="task-column completed-column" id="completed-column">
+          <header class="column-header" id="completed-header">
+            <h2>Completed Tasks</h2>
+            <span class="task-count" id="completed-task-count">0</span>
+          </header>
+
+          <ul class="task-list completed-task-list" id="completed-task-list" aria-label="Completed task list">
+            <li class="task-item completed-item" id="completed-task-item-1">
+              <label class="task-check" for="completed-check-1">
+                <input type="checkbox" id="completed-check-1" name="completed-check-1" checked />
+                <span>Finalize sprint goals</span>
+              </label>
+            </li>
+
+            <li class="task-item completed-item" id="completed-task-item-2">
+              <label class="task-check" for="completed-check-2">
+                <input type="checkbox" id="completed-check-2" name="completed-check-2" checked />
+                <span>Update team calendar</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="site-footer">
+      <p class="footer-text" id="footer-text">© 2026 Professional To-Do Progress Tracker</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
