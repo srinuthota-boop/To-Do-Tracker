@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Professional To-Do Progress Tracker</title>
+    <title>Daily Progress Tracker</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -12,7 +12,7 @@
         <div class="brand-mark" id="brand-mark" aria-hidden="true">✓</div>
         <div class="brand-copy" id="brand-copy">
           <p class="eyebrow" id="eyebrow">Productivity dashboard</p>
-          <h1 class="app-title" id="app-title">To-Do Progress Tracker</h1>
+          <h1 class="app-title" id="app-title">Daily Progress Tracker</h1>
         </div>
       </div>
 
@@ -71,7 +71,7 @@
 
         <div class="progress-card" id="progress-card">
           <div class="progress-meta" id="progress-meta">
-            <p class="progress-text" id="progress-text">Overall completion</p>
+            <p class="progress-text" id="progress-text">Today's completion</p>
             <strong class="progress-percent" id="progress-percent">0%</strong>
           </div>
           <progress class="task-progress" id="task-progress" value="0" max="100">0%</progress>
@@ -90,67 +90,37 @@
           </article>
 
           <article class="stat-item pending-tasks" id="pending-tasks">
-            <p class="stat-label" id="pending-tasks-label">Pending Tasks</p>
+            <p class="stat-label" id="pending-tasks-label">Pending Today</p>
             <strong class="stat-value" id="pending-tasks-value">0</strong>
           </article>
 
           <article class="stat-item completed-tasks" id="completed-tasks">
-            <p class="stat-label" id="completed-tasks-label">Completed Tasks</p>
+            <p class="stat-label" id="completed-tasks-label">Completed Today</p>
             <strong class="stat-value" id="completed-tasks-value">0</strong>
           </article>
 
+          <article class="stat-item today-progress" id="today-progress">
+            <p class="stat-label" id="today-progress-label">Today's Progress %</p>
+            <strong class="stat-value" id="today-progress-value">0%</strong>
+          </article>
+
           <article class="stat-item completion-rate" id="completion-rate">
-            <p class="stat-label" id="completion-rate-label">Progress Percentage</p>
+            <p class="stat-label" id="completion-rate-label">Overall Completion</p>
             <strong class="stat-value" id="completion-rate-value">0%</strong>
           </article>
         </div>
       </section>
 
-      <section class="task-lists" id="task-lists" aria-label="Task lists">
-        <div class="task-column pending-column" id="pending-column">
-          <header class="column-header" id="pending-header">
-            <h2>Pending Tasks</h2>
-            <span class="task-count" id="pending-task-count">0</span>
-          </header>
-
-          <ul class="task-list pending-task-list" id="pending-task-list" aria-label="Pending task list">
-            <li class="task-item pending-item" id="pending-task-item-1">
-              <label class="task-check" for="pending-check-1">
-                <input type="checkbox" id="pending-check-1" name="pending-check-1" />
-                <span>Prepare weekly project brief</span>
-              </label>
-            </li>
-
-            <li class="task-item pending-item" id="pending-task-item-2">
-              <label class="task-check" for="pending-check-2">
-                <input type="checkbox" id="pending-check-2" name="pending-check-2" />
-                <span>Review client feedback</span>
-              </label>
-            </li>
-          </ul>
-        </div>
-
-        <div class="task-column completed-column" id="completed-column">
-          <header class="column-header" id="completed-header">
-            <h2>Completed Tasks</h2>
-            <span class="task-count" id="completed-task-count">0</span>
-          </header>
-
-          <ul class="task-list completed-task-list" id="completed-task-list" aria-label="Completed task list">
-            <li class="task-item completed-item" id="completed-task-item-1">
-              <label class="task-check" for="completed-check-1">
-                <input type="checkbox" id="completed-check-1" name="completed-check-1" checked />
-                <span>Finalize sprint goals</span>
-              </label>
-            </li>
-
-            <li class="task-item completed-item" id="completed-task-item-2">
-              <label class="task-check" for="completed-check-2">
-                <input type="checkbox" id="completed-check-2" name="completed-check-2" checked />
-                <span>Update team calendar</span>
-              </label>
-            </li>
-          </ul>
+      <section class="task-lists" id="task-lists" aria-label="Daily progress table">
+        <div class="table-wrapper" id="table-wrapper">
+          <table class="tracker-table" id="tracker-table">
+            <thead>
+              <tr>
+                <th class="task-name-col">Task Name</th>
+              </tr>
+            </thead>
+            <tbody id="tracker-body"></tbody>
+          </table>
         </div>
       </section>
     </main>
